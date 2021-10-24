@@ -47,7 +47,7 @@ def out_sbox(output): # input as 4-bit string
         return '1111'
 
 
-def calc_bias_more(K1, K2, K3, K4):
+def calc_bias_more(K1, K2, K3, K4, pcdic):
     count = 0
     for p in pcdic:
         c = pcdic[p]
@@ -109,7 +109,7 @@ for k1 in range(0, 16):
 biases = []
 
 for subkey in subkeys:
-    biases.append(calc_bias_more(subkey[0], subkey[1], subkey[2], subkey[3]))
+    biases.append(calc_bias_more(subkey[0], subkey[1], subkey[2], subkey[3], pcdic))
 
 for b in biases:
     print(b)
